@@ -42,7 +42,10 @@ public:
 	int Offset = 0;
 	int stringOffset = 0;
 	int StatementCounter = 0;
+	int StatementCounter2 = 0;
 	vector<int> Stack;
+	vector<int> ColtonWasHere;
+	vector<int> StackType;
 	CodeGen();
 	// Initializes the code generator;
 
@@ -99,10 +102,13 @@ public:
 	void IntAppend(ExprRec & exprRec);
 	// definition here
 
-	void ForAssign();
+	void ForAssign(ExprRec& expr);
 	// definition here
 
-	void ForUpdate();
+	void ForUpdate(OpRec& op);
+	// definition here
+
+	void ForLabeling();
 	// definition here
 
 	void ForEnd();
@@ -110,11 +116,10 @@ public:
 
 	void SetCondition(ExprRec& leftHandSide, ExprRec& rightHandSide);
 	// definition here
-
 	void DoLoopBegin();
 	// definition here
 
-	void DoLoopEnd();
+	void DoLoopEnd(OpRec& op);
 	// definition here
 
 	void WhileLabeling();
@@ -129,7 +134,7 @@ public:
 	void ProcessIf(OpRec& op);
 	// definition here
 
-	void ProcessElse();
+	void ProcessElse(OpRec& op);
 	// definition here
 
 	void IfEnd();
