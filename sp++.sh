@@ -17,6 +17,7 @@ cd ..
 if [[ "$#" -ne "2" ]] ; then
 	./csc testCases/$1
 	cd testCases/
+
 	if [ -f $file.asm ]; then
 	cp $file.asm ../sam_folder
 	echo "copying file to folder"

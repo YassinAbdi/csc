@@ -102,13 +102,13 @@ public:
 	void IntAppend(ExprRec & exprRec);
 	// definition here
 
-	void ForAssign(ExprRec& expr);
+	void ForAssign(ExprRec& expr, ExprRec& expr2);
+	// definition here
+
+	void ForBegin();
 	// definition here
 
 	void ForUpdate(OpRec& op);
-	// definition here
-
-	void ForLabeling();
 	// definition here
 
 	void ForEnd();
