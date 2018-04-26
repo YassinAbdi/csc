@@ -1,0 +1,52 @@
+
+
+ : S C O P Y   C O M P I L E R   L I S T I N G
+
+ Generated code is SAM assembly language for
+ the MACC2 virtual computer.
+ ___________________________________________
+
+ April 26, 2018 at 01:47 PM
+ Source file: testCases/23IntDiv.cpy
+
+ LINE #
+                    LDA       R15,VARS
+                    LDA       R14,STRINGS
+     1  :A
+     2  float: x := 23.2;
+     3  float: y := 102.3;
+                    LD        R0,+4(R15)
+                    FD        R0,+0(R15)
+                    FIX       R2,R0
+                    STO       R2,+0(R15)
+                    WRI       +0(R15)
+     4  :O y//x;
+     5  :Z
+                    HALT      
+                    LABEL     STRINGS
+                    LABEL     VARS
+                    REAL      23.200001
+                    REAL      102.300003
+                    REAL      0.000000
+
+
+ _____________________________________________
+ <><><><>  V A R I A B L E   T A B L E   <><><><>
+
+ Relative
+ Address      Identifier      Value      Type
+ --------     ----------      -----      -----
+      0       x               23.2          2
+      4       y               102.3          2
+      8       Temp&1               9.00415e-39          2
+ _____________________________________________
+
+ _____________________________________________
+ <><><><>  S C R I B B L E   T A B L E   <><><><>
+
+ Relative
+ Address      Identifier      Value      Type
+ --------     ----------      -----      -----
+ _____________________________________________
+
+ Normal successful compilation.

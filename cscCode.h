@@ -15,7 +15,7 @@ using namespace std;
 #include "cscSymbol.h"
 #include "cscSymbol.h"
 
-enum OpKind { PLUS, MINUS, MULTIPLY, DIVIDE, LE, LT, GT, GE, EQ, NE };
+enum OpKind { PLUS, MINUS, MULTIPLY, DIVIDE,INTDIV, LE, LT, GT, GE, EQ, NE };
 enum ExprKind { ID_EXPR, LITERAL_EXPR, TEMP_EXPR, INT_LITERAL_EXPR, FLOAT_LITERAL_EXPR, SCRIBBLE_LITERAL_EXPR, INT_ARRAY, FLOAT_ARRAY };
 
 struct OpRec // information about an operator
@@ -46,6 +46,8 @@ public:
 	vector<int> Stack;
 	vector<int> ColtonWasHere;
 	vector<int> StackType;
+	bool StringCmprUsed = false, StringCpyUsed = false;
+
 	CodeGen();
 	// Initializes the code generator;
 

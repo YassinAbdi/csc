@@ -1,0 +1,13 @@
+LDA       R15,VARS
+LDA       R14,STRINGS
+LD        R0,+4(R15)
+FD        R0,+0(R15)
+FIX       R2,R0
+STO       R2,+0(R15)
+WRI       +0(R15)
+HALT      
+LABEL     STRINGS
+LABEL     VARS
+REAL      23.200001
+REAL      102.300003
+REAL      0.000000
